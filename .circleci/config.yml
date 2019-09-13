@@ -61,9 +61,9 @@ jobs:
   deploy:
     <<: *defaults
     environment:
-      - STAGING_BUCKET: YOUR_STAGING_BUCKET_NAME
+      # - STAGING_BUCKET: YOUR_STAGING_BUCKET_NAME
       - PRODUCTION_BUCKET: YOUR_PRODUCTION_BUCKET_NAME
-      - STAGING_DISTRIBUTION_ID: YOUR_STAGING_DISTRIBUTION_ID
+      # - STAGING_DISTRIBUTION_ID: YOUR_STAGING_DISTRIBUTION_ID
       - PRODUCTION_DISTRIBUTION_ID: YOUR_PRODUCTION_DISTRIBUTION_ID
     steps:
       - attach_workspace:
@@ -80,9 +80,9 @@ jobs:
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
               aws s3 sync dist/ s3://${PRODUCTION_BUCKET} --delete
               aws cloudfront create-invalidation --distribution-id "${PRODUCTION_DISTRIBUTION_ID}" --paths /index.html
-            elif [ "${CIRCLE_BRANCH}" == "develop" ]; then
-              aws s3 sync dist/ s3://${STAGING_BUCKET} --delete
-              aws cloudfront create-invalidation --distribution-id "${STAGING_DISTREBUTION_ID}" --paths /index.html
+            # elif [ "${CIRCLE_BRANCH}" == "develop" ]; then
+            #   aws s3 sync dist/ s3://${STAGING_BUCKET} --delete
+            #   aws cloudfront create-invalidation --distribution-id "${STAGING_DISTREBUTION_ID}" --paths /index.html
             fi
 workflows:
   version: 2

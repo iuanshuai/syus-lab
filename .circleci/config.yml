@@ -119,7 +119,7 @@ workflows:
       - build:
           requires:
             - install
-      # - deploy:
-      #     requires:
-      #       - test
-      #       - build
+       - deploy:
+           requires:
+             - test
+             - build

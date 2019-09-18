@@ -1,6 +1,5 @@
-[![CircleCI](https://circleci.com/gh/iuanshuai/syus-lab.svg?style=svg)](https://circleci.com/gh/iuanshuai/syus-lab)
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
+# Syus-Lab
+[![CircleCI](https://circleci.com/gh/iuanshuai/Syus-Lab.svg?style=shield)](https://circleci.com/gh/iuanshuai/Syus-Lab)
 ## Available Scripts
 
 In the project directory, you can run:

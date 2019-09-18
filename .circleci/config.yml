@@ -63,6 +63,10 @@ jobs:
       - image: circleci/node:8.11
     working_directory: ~/Syus-Lab
     steps:
+      - run: yarn test
+      - run: sudo apt-get update && sudo apt-get install -y python-dev
+      - run: sudo curl -O https://bootstrap.pypa.io/get-pip.py
+      - run: sudo python get-pip.py
       - run:
           name: Install awscli
           command: sudo pip install awscli

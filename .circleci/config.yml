@@ -81,7 +81,7 @@ jobs:
           command: aws s3 sync build/ s3://lab.syus.me/ --delete
 workflows:
   version: 2
-  build_and_test:
+  build_and_deploy:
     jobs:
       - checkout_code
       - install:
@@ -91,9 +91,17 @@ workflows:
           requires:
             - install
       - build:
+        filters:
+            branches:
+              only: master
           requires:
             - install
       - deploy:
+          filters:
+            branches:
+              only: master
           requires:
             - test
             - build
+
+

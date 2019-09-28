@@ -91,7 +91,7 @@ workflows:
           requires:
             - install
       - build:
-        filters:
+          filters:
             branches:
               only: master
           requires:

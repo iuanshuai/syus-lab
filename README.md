@@ -2,6 +2,8 @@
 [![CircleCI](https://circleci.com/gh/iuanshuai/Syus-Lab.svg?style=shield)](https://circleci.com/gh/iuanshuai/Syus-Lab)
 ## Available Scripts
 
+test info
+
 In the project directory, you can run:
 
 ### `npm start`
